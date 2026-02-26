@@ -1,0 +1,60 @@
+.app-cont {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.top-notification {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 280px;
+  max-width: 520px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slide-down 0.3s ease-out;
+}
+
+.top-notification.success {
+  background: #1f9d55;
+}
+
+.top-notification.error {
+  background: #d64545;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -18px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 900px) {
+  .app-cont {
+    grid-template-columns: 340px 1fr;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-cont {
+    max-width: 1200px;
+    grid-template-columns: 320px 1fr 300px;
+    align-items: start;
+  }
+}

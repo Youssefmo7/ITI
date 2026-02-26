@@ -1,0 +1,10 @@
+<div class="cards-container">
+    <h2>Products List ({{ products.length }})</h2>
+    @for (product of products; track $index) {
+        <app-card 
+            (addToFavoritesEvent)="addToFavorites($event)"
+            (deleteProductEvent)="deleteProduct($event)"
+            [product]="product">
+        </app-card>
+    }
+</div>
